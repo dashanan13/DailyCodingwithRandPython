@@ -7,11 +7,10 @@ def getsol(reqsum, *numberlist):
 
     totalpass = 0
     for num1 in numberlist:
-        for num2 in numberlist:
-            totalpass=totalpass+1
-            if ((num1 + num2) == reqsum):
-                print("{0} + {1} = {2}".format(num1, num2, reqsum))
-
+        tmp = reqsum - num1
+        if(tmp in numberlist):
+            totalpass = totalpass + 1
+            print("{0} + {1} = {2}".format(num1, tmp, reqsum))
     print("Total passes: {0}".format(totalpass))
 
 
